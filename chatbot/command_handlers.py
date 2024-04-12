@@ -147,7 +147,6 @@ def save_data(address_book: AddressBook, filename=DB_PATH) -> str:
 @check_file_exists
 def load_data(filename=DB_PATH) -> AddressBook:
     try:
-        print(filename)
         with open(Path(filename).absolute(), 'rb') as file:
             return pickle.load(file)
     except (OSError, pickle.UnpicklingError):
